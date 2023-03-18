@@ -1,0 +1,68 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#pragma warning(disable:4996)
+using namespace std;
+int main()
+{
+	string A("123456");
+	cout << A<< endl;
+	const char* cr = "12345";
+	string a(cr, 3);
+	cout << a << endl;
+	string b(10, '5');
+	cout << b<< endl;
+	cout<<"b.size():" << b.size() << " " <<"b.length():" << b.length() << endl;
+	b.append(A,3,3);
+	cout << b << endl;
+	b.assign("123456789");
+	cout << b << endl;
+	cout << b.compare(A) << endl;
+	b.insert(3, A, 3, 3);
+	string c = b.substr(3, 3);
+	cout << c<< endl;
+	cout << b.find("456") << endl;
+	c.replace(0, 1, b);
+	cout << c<< endl;
+	c.swap(b);
+	cout << c << endl;
+	c += b;
+	cout << c << endl;
+	cout << (c == b) << endl;
+	cout << c[3] << endl;
+	string::iterator it;
+	for (it = c.begin(); it != c.end(); it++)
+	{
+		cout << *it << " ";
+	}
+		cout << endl;
+	char* cr1 = new char[10];
+	strcpy(cr1,"1234567");
+	cr= c.c_str();
+	cout << cr<< endl;
+	cr = c.data();    //Ô­ÔòÉÏ²»³£ÓÃ
+	cout << cr << endl;
+	cout << endl;
+
+	auto e = 3;
+	auto f = 3.0;
+	vector<int>az;
+
+	int bz[10] = {1,2,3,4,5,6,7,8,9,0};
+	char* cr2 = nullptr;   //È¡´úNULL
+
+	for (int i = 0; i < 10; i++)
+	{
+		az.push_back(0);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		cout << az[i] << " ";
+	}
+	cout << endl;
+	for (auto i : bz)
+	{
+		cout << i << " ";
+	}
+	return 0;
+}
